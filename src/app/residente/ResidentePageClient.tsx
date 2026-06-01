@@ -6,7 +6,7 @@ import {
   Calendar, ArrowLeft, Pin
 } from 'lucide-react';
 import { ChatMessage, Announcement } from '@/types';
-import { MOCK_ANNOUNCEMENTS, MOCK_RESERVATIONS, MOCK_COMMON_AREAS } from '../lib/mockData';
+import { MOCK_ANNOUNCEMENTS, MOCK_RESERVATIONS, MOCK_COMMON_AREAS } from '@/lib/mockData';
 
 
 type View = 'home' | 'visitante' | 'reservar' | 'reporte' | 'chat' | 'comunicados';
