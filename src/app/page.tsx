@@ -1,41 +1,20 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import RoleSelector from '@/components/RoleSelector';
-import AdminDashboard from '@/components/AdminDashboard';
-import PorteriaDashboard from '@/components/PorteriaDashboard';
-import ResidenteDashboard from '@/components/ResidenteDashboard';
 import { Role } from '@/types';
 
-export default function MVPPage() {
-  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
+export default function HomePage() {
+  const router = useRouter();
 
   const handleSelectRole = (role: Role) => {
-    setSelectedRole(role);
+    router.push(`/${role}`);
   };
 
-  const handleBackToSelector = () => {
-    setSelectedRole(null);
-  };
-
-  // Basic client-side routing based on selected role state
   return (
     <div className="min-h-screen bg-slate-50 transition-all duration-300">
-      {!selectedRole && (
-        <RoleSelector onSelectRole={handleSelectRole} />
-      )}
-      
-      {selectedRole === 'admin' && (
-        <AdminDashboard onBack={handleBackToSelector} />
-      )}
-      
-      {selectedRole === 'porteria' && (
-        <PorteriaDashboard onBack={handleBackToSelector} />
-      )}
-      
-      {selectedRole === 'residente' && (
-        <ResidenteDashboard onBack={handleBackToSelector} />
-      )}
+      <RoleSelector onSelectRole={handleSelectRole} />
     </div>
   );
 }
