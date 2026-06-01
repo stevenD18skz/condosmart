@@ -1,12 +1,12 @@
 import { Home, Users, Wrench, Bell, BarChart3, Settings } from 'lucide-react';
 
 const navItems = [
-  { id: 'dashboard', label: 'Dashboard', icon: Home },
-  { id: 'visitors', label: 'Visitantes', icon: Users },
-  { id: 'maintenance', label: 'Mantenimientos', icon: Wrench },
-  { id: 'announcements', label: 'Comunicados', icon: Bell },
-  { id: 'reports', label: 'Reportes', icon: BarChart3 },
-  { id: 'settings', label: 'Configuración', icon: Settings },
+  { id: 'dashboard', label: 'Dashboard', icon: Home, href: '/admin/dashboard' },
+  { id: 'visitors', label: 'Visitantes', icon: Users, href: '/admin/visits' },
+  { id: 'maintenance', label: 'Mantenimientos', icon: Wrench, href: '/admin/maintenance' },
+  { id: 'announcements', label: 'Comunicados', icon: Bell, href: '/admin/announcements' },
+  { id: 'reports', label: 'Reportes', icon: BarChart3, href: '/admin/reports' },
+  { id: 'settings', label: 'Configuración', icon: Settings, href: '/admin/settings' },
 ];
 
 const priorityConfig = {

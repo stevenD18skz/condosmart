@@ -15,6 +15,7 @@ const roles = [
     border: 'border-slate-200 hover:border-slate-400',
     badge: 'bg-slate-100 text-slate-700',
     features: ['Dashboard con métricas', 'Gestión de mantenimientos', 'Comunicados oficiales'],
+    href: '/admin/dashboard',
   },
   {
     id: 'porteria' as Role,
@@ -26,6 +27,7 @@ const roles = [
     border: 'border-sky-200 hover:border-sky-400',
     badge: 'bg-sky-100 text-sky-700',
     features: ['Registro de visitantes', 'Control de accesos', 'Verificación en 2 pasos'],
+    href: '/porteria',
   },
   {
     id: 'residente' as Role,
@@ -37,6 +39,7 @@ const roles = [
     border: 'border-teal-200 hover:border-teal-400',
     badge: 'bg-teal-100 text-teal-700',
     features: ['Autorizar visitantes', 'Reservar zonas comunes', 'Soporte chatbot 24/7'],
+    href: '/residente',
   },
 ];
 
@@ -97,7 +100,7 @@ export default function RoleSelector() {
           {roles.map((role) => (
             <Link
               key={role.id}
-              href={`/${role.id}`}
+              href={role.href}
               className={`group relative bg-white border-2 ${role.border} rounded-3xl p-7 text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-sky-400`}
             >
               {/* Icon */}
