@@ -1,13 +1,11 @@
-"use client";
+import type { Metadata } from 'next';
+import PorteriaPageClient from './PorteriaPageClient';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import PorteriaDashboard from '@/components/PorteriaDashboard';
+export const metadata: Metadata = {
+  title: "Control de Acceso (Portería) — CondoSmart",
+  description: "Registro rápido de visitantes, verificación de autorizaciones y control de acceso en CondoSmart.",
+};
 
 export default function PorteriaPage() {
-  const router = useRouter();
-
-  return (
-    <PorteriaDashboard onBack={() => router.push('/')} />
-  );
+  return <PorteriaPageClient />;
 }

@@ -1,13 +1,11 @@
-"use client";
+import type { Metadata } from 'next';
+import ResidentePageClient from './ResidentePageClient';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import ResidenteDashboard from '@/components/ResidenteDashboard';
+export const metadata: Metadata = {
+  title: "Panel del Residente — CondoSmart",
+  description: "Autorizaciones de visitas, reservas de zonas comunes y soporte virtual en CondoSmart.",
+};
 
 export default function ResidentePage() {
-  const router = useRouter();
-
-  return (
-    <ResidenteDashboard onBack={() => router.push('/')} />
-  );
+  return <ResidentePageClient />;
 }

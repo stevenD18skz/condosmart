@@ -1,13 +1,11 @@
-"use client";
+import type { Metadata } from 'next';
+import AdminPageClient from './AdminPageClient';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import AdminDashboard from '@/components/AdminDashboard';
+export const metadata: Metadata = {
+  title: "Administrador — CondoSmart",
+  description: "Panel de control centralizado, reportes, comunicados y gestión integral de CondoSmart.",
+};
 
 export default function AdminPage() {
-  const router = useRouter();
-
-  return (
-    <AdminDashboard onBack={() => router.push('/')} />
-  );
+  return <AdminPageClient />;
 }
