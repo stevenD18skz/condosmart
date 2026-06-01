@@ -1,12 +1,8 @@
 "use client";
 
-import React from 'react';
 import { Role } from '@/types';
 import { Building2, ShieldCheck, User, ChevronRight, Bell, Users, Wrench, CalendarDays } from 'lucide-react';
-
-interface RoleSelectorProps {
-  onSelectRole: (role: Role) => void;
-}
+import Link from 'next/link';
 
 const roles = [
   {
@@ -51,7 +47,7 @@ const stats = [
   { icon: CalendarDays, label: 'Reservas activas', value: '24' },
 ];
 
-export default function RoleSelector({ onSelectRole }: RoleSelectorProps) {
+export default function RoleSelector() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 flex flex-col">
       {/* Header */}
@@ -99,9 +95,9 @@ export default function RoleSelector({ onSelectRole }: RoleSelectorProps) {
         {/* Role cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl w-full">
           {roles.map((role) => (
-            <button
+            <Link
               key={role.id}
-              onClick={() => onSelectRole(role.id)}
+              href={`/${role.id}`}
               className={`group relative bg-white border-2 ${role.border} rounded-3xl p-7 text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-sky-400`}
             >
               {/* Icon */}
@@ -128,7 +124,7 @@ export default function RoleSelector({ onSelectRole }: RoleSelectorProps) {
                 <span className="text-sm font-semibold">Ingresar como {role.label}</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       </main>
